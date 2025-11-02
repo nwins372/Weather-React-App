@@ -32,8 +32,9 @@ const currentDateFunction = () => {
           event.preventDefault(); 
           setInput(''); 
           setWeather({ ...weather, loading: true }); 
-          const url = 'https://api.openweathermap.org/data/2.5/weather'; 
-          const api_key = '1762d225b23db52759759ea2403f98c8'; 
+          const url = 'http://localhost:5000/api/weather'; 
+          const api_key = process.env.REACT_APP_API_KEY;
+          console.log('api_key', api_key);
           await axios 
               .get(url, { 
                   params: { 
